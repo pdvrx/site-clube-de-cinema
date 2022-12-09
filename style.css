@@ -7,6 +7,11 @@
     background-color: #ece9e9;
     color: #111;
     font-family: 'Source Sans Pro', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .center {
@@ -41,6 +46,19 @@ header {
     max-height: 100px;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background-color: #ece9e9;
+    border: 0px solid #ece9e9;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ece9e9;
+    border-radius: 50px;
+    border: 0px solid #ece9e9;
+}
+
+
 
 /*=====================================================================================================*/
 
@@ -50,10 +68,6 @@ main {
     padding: 0 3% 0;
 }
 
-.toda-tela{
-    display: flex;
-    justify-content: space-between;
-}
 
 .filme-da-semana{
     color: #B498DB;
@@ -114,4 +128,57 @@ main {
     margin-top: -50vh;
     justify-content: right;
     display: flex;
+
+}
+
+
+@media screen and (max-width: 768px){
+
+    *{
+        width: 100%;
+    }
+
+    .filme-info img{
+        width: 100%;
+        max-height: 60vh;
+        box-shadow: 7px 5px 11px -1px rgba(0, 0, 0, 0.25);;
+    }
+
+    .filme-info{
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .textos-info{
+        max-height: 50vh;
+    }
+
+    .textos-info p{
+        margin-top: 7%;
+        max-width: 90%;
+        margin-left: 0;
+        
+    }
+    
+    .textos-info h2{
+        color: #9F71E0;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-size: 20px;
+    }
+
+    .textos-info h2{
+        text-align: center;
+    }
+
+    .trailer{
+        margin-top: 1vh;
+        padding-bottom: 10px;
+    }
+
+    #estrelas{
+        margin-left: 33%;
+    }
+
 }
