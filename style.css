@@ -114,14 +114,8 @@ main {
 .textos-info h2{
     color: #9F71E0;
     margin-top: 0.5%;
-    margin-bottom: 0.5%;
     font-size: 20px;
-}
-
-#estrelas{
-    box-shadow: none;
-    max-width: 30%;
-    height: 10%;
+    margin-bottom: -1%;
 }
 
 .trailer{
@@ -130,6 +124,32 @@ main {
     display: flex;
 
 }
+
+.avaliacao{
+    display: flex;
+    margin-left: -0.4%;
+    background-color: rgba(0, 0, 0, 0.0);
+   }
+  .star-icon{
+    background-color: rgba(0, 0, 0, 0.0);
+    list-style-type: none;
+    border: none;
+    cursor: pointer;
+    color: #9F71E0;
+    font-size: 50px;
+  }
+  .star-icon::before{
+    content: "\2605";
+  }
+  .star-icon.ativo ~ .star-icon::before{
+    content: "\2606";
+  }
+  .avaliacao:hover .star-icon::before{
+    content: "\2605";
+  }
+  .star-icon:hover ~ .star-icon::before{
+    content: "\2606";
+  }
 
 
 @media screen and (max-width: 768px){
@@ -177,8 +197,6 @@ main {
         padding-bottom: 10px;
     }
 
-    #estrelas{
-        margin-left: 33%;
-    }
+
 
 }

@@ -36,7 +36,15 @@
                         Em um futuro próximo, uma lei proíbe que as pessoas fiquem solteiras. Qualquer homem ou mulher que não estiver em um relacionamento é imediatamente preso e enviado ao Hotel, um lugar onde terá 45 dias para encontrar um parceiro. Caso não encontrem ninguém, essas pessoas são transformadas no animal de sua preferência e soltas no meio da floresta. Nesse contexto, um homem se apaixona em plena floresta. O problema é que isso também é expressamente proibido pelo sistema.
                     </p>
                     <h2>Sala de Artes às 17 hrs</h2>
-                    <img id="estrelas" src="estrelas.png" alt="">
+                    <div class="estrelas">
+                        <ul class="avaliacao">
+                            <li class="star-icon ativo" data-avaliacao="1"></li>
+                            <li class="star-icon" data-avaliacao="2"></li>
+                            <li class="star-icon" data-avaliacao="3"></li>
+                            <li class="star-icon" data-avaliacao="4"></li>
+                            <li class="star-icon" data-avaliacao="5"></li>
+                          </ul>
+                    </div>
             </div>
         </div>
 
@@ -51,6 +59,20 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+        
+        var stars = document.querySelectorAll('.star-icon');
+                  
+        document.addEventListener('click', function(e){
+        var classStar = e.target.classList;
+        if(!classStar.contains('ativo')){
+            stars.forEach(function(star){
+            star.classList.remove('ativo');
+            });
+            classStar.add('ativo');
+            console.log(e.target.getAttribute('data-avaliacao'));
+        }
+        });
+
     </script>
 
 </body>
