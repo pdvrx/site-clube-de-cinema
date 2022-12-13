@@ -198,6 +198,11 @@ main {
         padding-bottom: 10px;
     }
 
+    .avaliacao{
+        justify-content: center;
+        align-items: center;
+        margin-left: 15%;
+    }
 
 
 }
