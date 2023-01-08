@@ -13,7 +13,7 @@ function cadastrarFilme(){
 console.log(localStorage.url)
 
 
-fetch('https://api.themoviedb.org/3/movie/'+localStorage.url+'?api_key=7006774efe5e4045670045e98084b7c8')
+fetch('https://api.themoviedb.org/3/movie/'+url+'?api_key=7006774efe5e4045670045e98084b7c8')
 .then(resposta=>{
     return resposta.json()
 }).then(corpo=>{
@@ -27,7 +27,7 @@ fetch('https://api.themoviedb.org/3/movie/'+localStorage.url+'?api_key=7006774ef
 
 });
 
-fetch('http://api.themoviedb.org/3/movie/'+localStorage.url+'/videos?api_key=7006774efe5e4045670045e98084b7c8')
+fetch('http://api.themoviedb.org/3/movie/'+url+'/videos?api_key=7006774efe5e4045670045e98084b7c8')
 .then(pegartrailer=>{
     return pegartrailer.json()
 }).then(trailer=>{
