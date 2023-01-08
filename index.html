@@ -26,16 +26,17 @@
 
         <h1 class="filme-da-semana">Filme da Semana</h1>
 
-        <h1 class="titulo-filme">The Lobster</h1>
+        <h1 id="titulo-filme"></h1>
 
         <div class="filme-info">
-            <img src="https://m.media-amazon.com/images/M/MV5BNDQ1NDE5NzQ1NF5BMl5BanBnXkFtZTgwNzA5OTM2NTE@._V1_FMjpg_UX1000_.jpg" alt="">
+            <img id="poster" src="" alt="">
                 
             <div class="textos-info">
                     <p>
                         Em um futuro próximo, uma lei proíbe que as pessoas fiquem solteiras. Qualquer homem ou mulher que não estiver em um relacionamento é imediatamente preso e enviado ao Hotel, um lugar onde terá 45 dias para encontrar um parceiro. Caso não encontrem ninguém, essas pessoas são transformadas no animal de sua preferência e soltas no meio da floresta. Nesse contexto, um homem se apaixona em plena floresta. O problema é que isso também é expressamente proibido pelo sistema.
                     </p>
                     <h2>Sala de Artes às 17 hrs</h2>
+                    <span id="rate"></span>
                     <div class="estrelas">
                         <ul class="avaliacao">
                             <li class="star-icon ativo" data-avaliacao="1"></li>
@@ -49,7 +50,7 @@
         </div>
 
         <div class="trailer">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vU29VfayDMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe id="link" width="560" height="315" src="https://www.youtube.com/embed/vU29VfayDMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
             
     </div>
@@ -59,19 +60,31 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
-        
-        var stars = document.querySelectorAll('.star-icon');
-                  
-        document.addEventListener('click', function(e){
-        var classStar = e.target.classList;
-        if(!classStar.contains('ativo')){
-            stars.forEach(function(star){
-            star.classList.remove('ativo');
-            });
-            classStar.add('ativo');
-            console.log(e.target.getAttribute('data-avaliacao'));
-        }
+
+        url=82690
+
+        fetch('https://api.themoviedb.org/3/movie/'+url+'?api_key=7006774efe5e4045670045e98084b7c8')
+        .then(resposta=>{
+            return resposta.json()
+        }).then(corpo=>{
+            poster=corpo.poster_path
+            nome=corpo.original_title
+            nota=corpo.vote_average
+            nota=nota*10
+            document.getElementById("rate").innerHTML=Math.trunc(nota)
+            document.getElementById("titulo-filme").innerHTML=nome
+            document.getElementById("poster").src="https://image.tmdb.org/t/p/original" + poster
+
         });
+
+        fetch('http://api.themoviedb.org/3/movie/'+url+'/videos?api_key=7006774efe5e4045670045e98084b7c8')
+        .then(pegartrailer=>{
+            return pegartrailer.json()
+        }).then(trailer=>{
+            v=trailer.results.length-1
+            link=(trailer.results[v].key)
+            document.getElementById("link").src= "https://www.youtube.com/embed/"+ link
+        })
 
     </script>
 

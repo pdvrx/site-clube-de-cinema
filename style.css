@@ -85,7 +85,7 @@ main {
     margin-top: 2%;
 }
 
-.titulo-filme{
+#titulo-filme{
     color: #9F71E0;
     font-style: italic;
     margin-top: 3%;
@@ -119,7 +119,7 @@ main {
 }
 
 .trailer{
-    margin-top: -50vh;
+    margin-top: -55vh;
     justify-content: right;
     display: flex;
 
