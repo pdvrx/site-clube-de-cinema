@@ -1,3 +1,18 @@
+<?php
+
+define ('HOST','localhost');
+define ('USUARIO','root');
+define ('SENHA','123456');
+define ('DB','clbcnm');
+
+$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('falha');
+
+$resultado = mysqli_query($conexao, "SELECT descFilme FROM filmes");
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ptbr">
 <head>
@@ -33,7 +48,7 @@
                 
             <div class="textos-info">
                     <p>
-                        Em um futuro próximo, uma lei proíbe que as pessoas fiquem solteiras. Qualquer homem ou mulher que não estiver em um relacionamento é imediatamente preso e enviado ao Hotel, um lugar onde terá 45 dias para encontrar um parceiro. Caso não encontrem ninguém, essas pessoas são transformadas no animal de sua preferência e soltas no meio da floresta. Nesse contexto, um homem se apaixona em plena floresta. O problema é que isso também é expressamente proibido pelo sistema.
+                        <?php echo $?>
                     </p>
                     <h2>Sala de Artes às 17 hrs</h2>
                     <span id="rate"></span>
