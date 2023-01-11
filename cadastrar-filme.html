@@ -13,9 +13,10 @@
 </head>
 <body>
 
-    <input type="text" placeholder="id do filme" id="idFilme">
-    <input type="text" placeholder="descrição do filme" id="descFilme">
-    <input type="submit" onclick="salvar();">
+    <form action="cadastrarfilme.php" method="POST"></form>
+    <input type="text" placeholder="id do filme" id="idFilme" name="idFilme">
+    <input type="text" placeholder="descrição do filme" id="descFilme" name="descFilme">
+    <input type="submit">
 
     <script src="script.js"></script>
     <script src="banco.js"></script>
