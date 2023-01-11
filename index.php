@@ -1,11 +1,8 @@
-
 <?php
 
-$pdo = new PDO("mysql:dbname=freedb_clbcnm;host=sql.freedb.tech","freedb_pedrocinema","ty5%rSqJX@&HGTM");
-
+$pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");
 try{
-    $pdo = new PDO("mysql:dbname=freedb_clbcnm;host=sql.freedb.tech","freedb_pedrocinema","ty5%rSqJX@&HGTM");
-} 
+    $pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");} 
 catch(PDOException $e){
     echo "erro bd: " . $e->getMessage();
 }
@@ -102,14 +99,14 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
 
         });
 
-        fetch('http://api.themoviedb.org/3/movie/'+url+'/videos?api_key=7006774efe5e4045670045e98084b7c8')
+        fetch('https://api.themoviedb.org/3/movie/'+url+'/videos?api_key=7006774efe5e4045670045e98084b7c8')
         .then(pegartrailer=>{
             return pegartrailer.json()
         }).then(trailer=>{
             console.log(trailer)
             v=trailer.results.length-1
-            link=(trailer.results[v].key)
-            document.getElementById("link").src= "https://www.youtube.com/embed/"+ link
+            var link=(trailer.results[v].key)
+            document.getElementById("link").src= "https://www.youtube.com/embed/"+link
         })
 
     </script>
