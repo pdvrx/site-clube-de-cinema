@@ -1,10 +1,16 @@
 <?php
 
-define ('HOST','localhost');
-define ('USUARIO','root');
-define ('SENHA','123456');
-define ('DB','clbcnm');
+$pdo = new PDO("mysql:dbname=freedb_clbcnm;host=sql.freedb.tech","freedb_pedrocinema","ty5%rSqJX@&HGTM");
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('falha');
+try{
+    $pdo = new PDO("mysql:dbname=freedb_clbcnm;host=sql.freedb.tech","freedb_pedrocinema","ty5%rSqJX@&HGTM");
+} 
+catch(PDOException $e){
+    echo "erro bd: " . $e->getMessage();
+}
+
+catch(Exception $e){
+    echo "erro generico: " . $e->getMessage();
+}
 
 ?>

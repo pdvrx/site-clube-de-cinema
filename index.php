@@ -1,17 +1,24 @@
+
 <?php
 
-define ('HOST','localhost');
-define ('USUARIO','root');
-define ('SENHA','123456');
-define ('DB','clbcnm');
+$pdo = new PDO("mysql:dbname=freedb_clbcnm;host=sql.freedb.tech","freedb_pedrocinema","ty5%rSqJX@&HGTM");
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('falha');
+try{
+    $pdo = new PDO("mysql:dbname=freedb_clbcnm;host=sql.freedb.tech","freedb_pedrocinema","ty5%rSqJX@&HGTM");
+} 
+catch(PDOException $e){
+    echo "erro bd: " . $e->getMessage();
+}
 
-$resultado = mysqli_query($conexao, "SELECT descFilme FROM filmes");
+catch(Exception $e){
+    echo "erro generico: " . $e->getMessage();
+}
 
+$cmd = $pdo->prepare("SELECT descFilme,idFilme FROM filmes WHERE id IS NOT NULL");
+$cmd->execute();
+$resultado = $cmd->fetch(PDO::FETCH_ASSOC);
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ptbr">
@@ -48,7 +55,7 @@ $resultado = mysqli_query($conexao, "SELECT descFilme FROM filmes");
                 
             <div class="textos-info">
                     <p>
-                        <?php echo $?>
+                        <?php echo $resultado['descFilme']; ?>
                     </p>
                     <h2>Sala de Artes às 17 hrs</h2>
                     <span id="rate"></span>
@@ -75,6 +82,37 @@ $resultado = mysqli_query($conexao, "SELECT descFilme FROM filmes");
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js" ></script>
     <script src="banco.js"></script>
+    <script>
+
+         url = "<?php echo $resultado['idFilme']; ?>"
+
+        console.log(url)
+
+        fetch('https://api.themoviedb.org/3/movie/'+url+'?api_key=7006774efe5e4045670045e98084b7c8')
+        .then(resposta=>{
+            return resposta.json()
+        }).then(corpo=>{
+            poster=corpo.poster_path
+            nome=corpo.original_title
+            nota=corpo.vote_average
+            nota=nota*10
+            document.getElementById("rate").innerHTML=Math.trunc(nota)
+            document.getElementById("titulo-filme").innerHTML=nome
+            document.getElementById("poster").src="https://image.tmdb.org/t/p/original" + poster
+
+        });
+
+        fetch('http://api.themoviedb.org/3/movie/'+url+'/videos?api_key=7006774efe5e4045670045e98084b7c8')
+        .then(pegartrailer=>{
+            return pegartrailer.json()
+        }).then(trailer=>{
+            console.log(trailer)
+            v=trailer.results.length-1
+            link=(trailer.results[v].key)
+            document.getElementById("link").src= "https://www.youtube.com/embed/"+ link
+        })
+
+    </script>
 
 </body>
 </html>
