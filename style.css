@@ -136,20 +136,13 @@ main {
     background-color: rgba(0, 0, 0, 0.0);
     list-style-type: none;
     border: none;
-    cursor: pointer;
     color: #9F71E0;
     font-size: 50px;
   }
   .star-icon::before{
     content: "\2605";
   }
-  .star-icon.ativo ~ .star-icon::before{
-    content: "\2606";
-  }
-  .avaliacao:hover .star-icon::before{
-    content: "\2605";
-  }
-  .star-icon:hover ~ .star-icon::before{
+  .eon ~ .star-icon::before{
     content: "\2606";
   }
 
@@ -210,7 +203,7 @@ main {
     }
 
     .filme-info img{
-        width: 100%;
+        width: 90%;
         max-height: 60vh;
         box-shadow: 7px 5px 11px -1px rgba(0, 0, 0, 0.25);
     }

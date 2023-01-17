@@ -1,21 +1,4 @@
-<?php
 
-$pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");
-try{
-    $pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");} 
-catch(PDOException $e){
-    echo "erro bd: " . $e->getMessage();
-}
-
-catch(Exception $e){
-    echo "erro generico: " . $e->getMessage();
-}
-
-$cmd = $pdo->prepare("SELECT descFilme,idFilme FROM filmes WHERE id IS NOT NULL");
-$cmd->execute();
-$resultado = $cmd->fetch(PDO::FETCH_ASSOC);
-
-?>
 
 <!DOCTYPE html>
 <html lang="ptbr">
@@ -55,7 +38,6 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
                         <?php echo $resultado['descFilme']; ?>
                     </p>
                     <h2>Sala de Artes às 17 hrs</h2>
-
                     <div class="estrelas">
                         <ul class="avaliacao">
                             <li class="star-icon" id="e1"></li>
@@ -81,7 +63,8 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
     <script src="banco.js"></script>
     <script>
 
-         url = "<?php echo $resultado['idFilme']; ?>"
+        url = 14164
+        nota = 0
 
         console.log(url)
 
@@ -136,6 +119,16 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
             var link=(trailer.results[v].key)
             document.getElementById("link").src= "https://www.youtube.com/embed/"+link
         })
+
+        
+    
+
+
+
+
+
+
+
 
     </script>
 
