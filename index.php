@@ -78,7 +78,6 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js" ></script>
-    <script src="banco.js"></script>
     <script>
 
          url = "<?php echo $resultado['idFilme']; ?>"

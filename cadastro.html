@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body>
-    <h3>Login</h3>
-    <input type="text" placeholder="login" id="login" >
-    <input type="password" placeholder="senha" id="senha" >
-    <input type="submit" onclick="logar(); return false">
+    <div class="form">
 
+        <h3>Entre para cadastrar filmes</h3>
+        <div class="inputs">
+            <input type="text" placeholder="Login" id="login" >
+            <input type="password" placeholder="Senha" id="senha" >
+            <input type="submit" id="botao" onclick="logar(); return false">
+        </div>
+    </div>
+</div>
     <script src="script.js"></script>
-    <script src="banco.js"></script>
 </body>
 </html>

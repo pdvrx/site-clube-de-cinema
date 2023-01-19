@@ -13,12 +13,31 @@
 </head>
 <body>
 
-    <form action="cadastrarfilme.php" method="POST">
-    <input type="text" placeholder="id do filme" id="idFilme" name="idFilme">
-    <input type="text" placeholder="descrição do filme" id="descFilme" name="descFilme">
-    <input type="submit">
+    <div class="form2">
+        <h3>Insira os dados para cadastrar o filme</h3>
+        <form action="cadastrarfilme.php" method="POST">
+            <div class="inputs">
+                <input type="text" placeholder="insira o id do filme" id="idFilme" name="idFilme">
+                <textarea name="descFilme" id="descFilme" cols="53" rows="5" placeholder="Insira a sinopse do filme"></textarea>
+                <input type="submit" id="button">
+            </div>
     </form>
+        <button id="open-modal" > Saiba como cadastrar filmes</button>
+    </div>
+
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide">
+        <h1>Como cadastrar</h1>
+        <p>O nosso site utiliza a base de dados fornecida pelo site <a href="https://www.themoviedb.org/">The Movie Database. </a>
+        Para fazer o cadastro de forma simples e rápida procure pelo filme desejado e acesse sua página</p>
+        <br>
+        <p>Com a página aberta procure pelo Id do filme composto por uma sequência de números 
+        que precedem o título do filme na URL do site. Por exemplo:</p>
+        <p id="infoid">https://www.themoviedb.org/movie/<a href="#" id="idespecial">844</a>-2046</p> 
+        <p>Uma vez com acesso a esse Id, nosso sistema será capaz de obter automaticamente informações sobre o filme escolhido
+        bastando apenas que você escreva uma descrição para ele. </p>
+        <button id="close-modal" >fechar</button>
+    </div>
 
     <script src="script.js"></script>
-    <script src="banco.js"></script>
 </body>
