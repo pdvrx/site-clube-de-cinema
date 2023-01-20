@@ -1,21 +1,4 @@
-<?php
 
-$pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");
-try{
-    $pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");} 
-catch(PDOException $e){
-    echo "erro bd: " . $e->getMessage();
-}
-
-catch(Exception $e){
-    echo "erro generico: " . $e->getMessage();
-}
-
-$cmd = $pdo->prepare("SELECT descFilme,idFilme FROM filmes WHERE id IS NOT NULL");
-$cmd->execute();
-$resultado = $cmd->fetch(PDO::FETCH_ASSOC);
-
-?>
 
 <!DOCTYPE html>
 <html lang="ptbr">
@@ -52,7 +35,7 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
                 
             <div class="textos-info">
                     <p>
-                        <?php echo $resultado['descFilme']; ?>
+                        Em um futuro distópico próximo, uma lei proíbe que as pessoas fiquem solteiras. Qualquer homem ou mulher que não estiver em um relacionamento é preso e enviado ao Hotel, onde terá 45 dias para encontrar um(a) parceiro(a). Caso não encontrem ninguém, eles são transformados em um animal de sua preferência e soltos no meio da Floresta. Neste contexto um homem se apaixona em plena floresta, o que é proibido de acordo com o sistema.
                     </p>
                     <h2>Sala de Artes às 17 hrs</h2>
 
@@ -82,7 +65,7 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
 
         AOS.init();
 
-         url = "<?php echo $resultado['idFilme']; ?>"
+         url = "254320"
 
         console.log(url)
 
