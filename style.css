@@ -247,7 +247,7 @@ button {
     opacity: 0.8;
   }
   
-  #open-modal {
+  .open-modal {
     border: none;
     padding: 10px;
     width: 90%;
@@ -536,7 +536,21 @@ textarea{
     margin-right: 8px;
 }
 
+.fa-whatsapp{
+    margin-top: -2.5%;
+    margin-left: -15%;
+}
 
+#zapinfo{
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+#numero{
+    margin-top: -400px;
+    margin-bottom: 10px;
+}
 
 
 @media screen and (max-width: 480px){
@@ -702,6 +716,12 @@ textarea{
     .fa-twitch{
         margin-top: 26%;
         margin-right: -6%;
+    }
+
+    .fa-whatsapp{
+        font-size: 60px;
+        margin-top: -2.5%;
+        margin-left: -15%;
     }
 
 }

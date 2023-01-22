@@ -69,7 +69,7 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
             </div>
 
             <div class="trailer">
-                <iframe id="link" width="560" height="315" src="https://www.youtube.com/embed/vU29VfayDMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="link" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
     
         </div>
@@ -91,10 +91,17 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
                         <a target="_blank" href="https://en.wikipedia.org/wiki/Cat" class="fa-brands fa-instagram"></a>
                     </div>
 
-                    <div class="cards">
+             <div class="cards">
 
-                        <a target="_blank" href="https://en.wikipedia.org/wiki/Cat" class="fa-brands fa-whatsapp"></a>
+                        <button class="fa-brands fa-whatsapp" id="open-modal" ></button>
                     </div>
+
+                    <div id="fade" class="hide"></div>
+                    <div id="modal" class="hide">
+                        <h1>Deseja receber aviso dos próximos encontros direto no seu WhatsApp?</h1>
+                            <p id="zapinfo">Nos envie seu número para que possamos te notificar dos nossos encontros e eventos! </p>
+                        <button id="close-modal" >Bora lá</button>
+                     </div>
 
                     <div class="cards">
                         <a target="_blank" href="https://en.wikipedia.org/wiki/Cat" class="fa-brands fa-youtube"></a>
@@ -105,7 +112,9 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
                     </div>
             </div>
         </div>
-    </div>
+    </div>      
+
+
 
     <script src="https://kit.fontawesome.com/858c1077eb.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -169,6 +178,12 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
             var link=(trailer.results[v].key)
             document.getElementById("link").src= "https://www.youtube.com/embed/"+link
         })
+        
+               const zap = document.querySelector("#close-modal")
+        zap.onclick = function() {
+            window.open('cadastrar-zap.html');
+
+        }
 
     </script>
 
