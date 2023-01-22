@@ -41,41 +41,73 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
     </header>
 
     <main>
-    <div data-aos="fade-down" data-aos-duration="1700" >
+        <div data-aos="fade-down" data-aos-duration="1700" class="section">
 
-        <h1 class="filme-da-semana">Filme da Semana</h1>
+            <h1 class="filme-da-semana">Filme da Semana</h1>
 
-        <h1 id="titulo-filme"></h1>
+            <h1 id="titulo-filme"></h1>
 
-        <div class="filme-info">
-            <img id="poster" src="" alt="">
-                
-            <div class="textos-info">
-                    <p>
-                        <?php echo $resultado['descFilme']; ?>
-                    </p>
-                    <h2>Sala de Artes às 17 hrs</h2>
+            <div class="filme-info">
+                <img id="poster" src="" alt="">
+                    
+                <div class="textos-info">
+                        <p>
+                            <?php echo $resultado['descFilme']; ?>
+                        </p>
+                        <h2>Sala de Artes às 17 hrs</h2>
 
-                    <div class="estrelas">
-                        <ul class="avaliacao">
-                            <li class="star-icon" id="e1"></li>
-                            <li class="star-icon" id="e2"></li>
-                            <li class="star-icon" id="e3"></li>
-                            <li class="star-icon" id="e4"></li>
-                            <li class="star-icon" id="e5"></li>
-                          </ul>
+                        <div class="estrelas">
+                            <ul class="avaliacao">
+                                <li class="star-icon" id="e1"></li>
+                                <li class="star-icon" id="e2"></li>
+                                <li class="star-icon" id="e3"></li>
+                                <li class="star-icon" id="e4"></li>
+                                <li class="star-icon" id="e5"></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+
+            <div class="trailer">
+                <iframe id="link" width="560" height="315" src="https://www.youtube.com/embed/vU29VfayDMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+    
+        </div>
+    </main>
+
+    <div class="tela2">
+        <div class="section">
+
+            <h1 class="sbrns"> Sobre nós</h1>
+            <div class="desc-projeto">
+                <div class="center">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.</p>
+                </div>
+                <h1 class="nsacp">nos acompanhe em outros portais</h1>
+            </div>
+
+            <div class="cards-collection">
+                    <div class="cards">
+                        <a target="_blank" href="https://en.wikipedia.org/wiki/Cat" class="fa-brands fa-instagram"></a>
+                    </div>
+
+                    <div class="cards">
+
+                        <a target="_blank" href="https://en.wikipedia.org/wiki/Cat" class="fa-brands fa-whatsapp"></a>
+                    </div>
+
+                    <div class="cards">
+                        <a target="_blank" href="https://en.wikipedia.org/wiki/Cat" class="fa-brands fa-youtube"></a>
+                    </div>
+
+                    <div class="cards">
+                        <a target="_blank" href="https://en.wikipedia.org/wiki/Cat" class="fa-brands fa-twitch"></a>
                     </div>
             </div>
         </div>
-
-        <div class="trailer">
-<iframe id="link" width="560" height="315" src="https://www.youtube.com/embed/vU29VfayDMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-            
     </div>
-    </main>
 
-
+    <script src="https://kit.fontawesome.com/858c1077eb.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js" ></script>
     <script>
