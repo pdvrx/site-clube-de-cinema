@@ -11,7 +11,7 @@ catch(Exception $e){
     echo "erro generico: " . $e->getMessage();
 }
 
-$res = $pdo->query("DELETE FROM filmes WHERE corpoEmail IS NOT NULL");
+$res = $pdo->query("DELETE FROM emails WHERE corpoEmail IS NOT NULL");
 
 $corpoEmail = $_POST['corpoEmail'];
 
