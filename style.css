@@ -523,6 +523,16 @@ textarea{
     text-decoration: none;
 }
 
+.fa-regular{
+    margin-top: 20px;
+    font-size: 60px;
+    width: 50px;
+    text-align: center;
+    background: none;
+    color: white;   
+    text-decoration: none;
+}
+
 .tela2{
     max-height: 90vh;
 }
@@ -536,10 +546,11 @@ textarea{
     margin-right: 8px;
 }
 
-.fa-whatsapp{
-    margin-top: -2.5%;
-    margin-left: -15%;
+.fa-envelope{
+    margin-left: -25%;
+    margin-top: 5%;
 }
+
 
 #zapinfo{
     text-align: center;
@@ -697,7 +708,6 @@ textarea{
         background-color: #9F71E0;
         
     }
-
     
     .fa-brands {
         margin-top: 15px;
@@ -718,10 +728,9 @@ textarea{
         margin-right: -6%;
     }
 
-    .fa-whatsapp{
-        font-size: 60px;
-        margin-top: -2.5%;
-        margin-left: -15%;
+    .fa-envelope{
+        font-size: 60;
+
     }
 
 }

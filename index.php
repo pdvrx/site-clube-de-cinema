@@ -88,18 +88,18 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
 
             <div class="cards-collection">
                     <div class="cards">
-                        <a target="_blank" href="https://en.wikipedia.org/wiki/Cat" class="fa-brands fa-instagram"></a>
+                        <a target="_blank" href="https://www.instagram.com/cinemacefetleo/?igshid=NTA5ZTk1NTc%3D" class="fa-brands fa-instagram"></a>
                     </div>
 
              <div class="cards">
 
-                        <button class="fa-brands fa-whatsapp" id="open-modal" ></button>
+                        <button class="fa-regular fa-envelope" id="open-modal" ></button>
                     </div>
 
                     <div id="fade" class="hide"></div>
                     <div id="modal" class="hide">
-                        <h1>Deseja receber aviso dos próximos encontros direto no seu WhatsApp?</h1>
-                            <p id="zapinfo">Nos envie seu número para que possamos te notificar dos nossos encontros e eventos! </p>
+                        <h1>Deseja receber aviso dos próximos encontros direto no seu Email?</h1>
+                            <p id="zapinfo">Nos envie seu endereço de email para que possamos te notificar dos nossos encontros e eventos! </p>
                         <button id="close-modal" >Bora lá</button>
                      </div>
 
@@ -181,7 +181,7 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
         
                const zap = document.querySelector("#close-modal")
         zap.onclick = function() {
-            window.open('cadastrar-zap.html');
+            window.open('cadastrar-email.html');
 
         }
 

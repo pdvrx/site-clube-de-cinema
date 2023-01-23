@@ -1,5 +1,5 @@
 <?php
-ob_start();
+
 $pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");
 try{
     $pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");} 
@@ -11,9 +11,11 @@ catch(Exception $e){
     echo "erro generico: " . $e->getMessage();
 }
 
-$numero = $_POST['numero'];
+$res = $pdo->query("DELETE FROM filmes WHERE corpoEmail IS NOT NULL");
 
-$pdo->query("INSERT INTO numeros (numero) VALUES ('$numero')");
+$corpoEmail = $_POST['corpoEmail'];
+
+$pdo->query("INSERT INTO emails (corpoEmail) VALUES ('$corpoEmail')");
 
 if($pdo){
     echo "foi";
@@ -22,5 +24,12 @@ if($pdo){
 } else{
     echo "n foi";
 }
+
+
+$cmd = $pdo->prepare("SELECT email,corpoEmail FROM emails WHERE id IS NOT NULL");
+$cmd->execute();
+$resultado = $cmd->fetch(PDO::FETCH_ASSOC);
+
+
 
 ?>

@@ -42,7 +42,7 @@ function logar(){
     console.log(login)
     if(login== "admin" && senha=="admin"){
         alert('Sucesso')
-        location.href="cadastrar-filme.html"
+        location.href="enviar-email.html"
         localStorage.clear()
     }else{
         alert('Usuário ou Senha incorretos')
