@@ -42,7 +42,7 @@ function logar(){
     console.log(login)
     if(login== "admin" && senha=="admin"){
         alert('Sucesso')
-        location.href="enviar-email.html"
+        location.href="menu.html"
         localStorage.clear()
     }else{
         alert('Usuário ou Senha incorretos')

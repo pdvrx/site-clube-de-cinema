@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 $pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");
 try{
     $pdo = new PDO("mysql:dbname=id20135716_clbcnm;host=localhost","id20135716_pedro","XU\=2-sxyu(v[{?_");} 
@@ -17,6 +17,27 @@ $corpoEmail = $_POST['corpoEmail'];
 
 $pdo->query("INSERT INTO emails (corpoEmail) VALUES ('$corpoEmail')");
 
+$corpo = "<html>
+
+<p>$corpoEmail</p>
+
+</html>";
+
+$assunto = "Encontro Clube de Cinema";
+
+$headers = "MIME-Version: 1:0\n";
+$headers .= "Content-Type: text/html; charset=iso-8859-1\n";
+$headers .= "From: <cinemacefetiando@gmail.com>";
+
+
+
+$cmd = $pdo->prepare("SELECT email,corpoEmail FROM emails WHERE idEmail IS NOT NULL");
+$cmd->execute();
+
+while($row_emails = $cmd->fetch(PDO::FETCH_ASSOC)){
+    mail($row_emails['email'], $assunto, $corpo, $headers);
+}
+
 if($pdo){
     echo "foi";
     header('Location: index.php');
@@ -24,12 +45,5 @@ if($pdo){
 } else{
     echo "n foi";
 }
-
-
-$cmd = $pdo->prepare("SELECT email,corpoEmail FROM emails WHERE id IS NOT NULL");
-$cmd->execute();
-$resultado = $cmd->fetch(PDO::FETCH_ASSOC);
-
-
 
 ?>
