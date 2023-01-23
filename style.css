@@ -550,8 +550,8 @@ textarea{
 }
 
 .fa-envelope{
-    margin-left: -25%;
-    margin-top: 5%;
+    margin-left: -27%;
+    margin-top: 3%;
 }
 
 
@@ -684,18 +684,6 @@ textarea{
         opacity: 0.8;
       }
       
-      #open-modal {
-        border: none;
-        padding: 10px;
-        width: 70%;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: 600;
-        border: none;
-        background-color: #9F71E0;
-        color: #ece9e9;
-        text-align: center;
-    }
 
     .textos-info{
         margin-left: 0%;
@@ -779,7 +767,9 @@ textarea{
     }
 
     .fa-envelope{
-        font-size: 60;
+        font-size: 40px;
+        margin-top: 6%;
+        margin-left: -2%;
 
     }
 

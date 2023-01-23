@@ -18,9 +18,34 @@ $corpoEmail = $_POST['corpoEmail'];
 $pdo->query("INSERT INTO emails (corpoEmail) VALUES ('$corpoEmail')");
 
 $corpo = "<html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+    
 
-<p>$corpoEmail</p>
+    body{
+        text-align: center;
+        justify-content: center;
+        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #ece9e9;
+    }
+    
+    img{
+        width: 80%;
+        
+    }
 
+    h1{
+        font-size: 42px;
+        font-style: italic;
+    }
+
+</style>
+<body>
+    <img src='https://uploaddeimagens.com.br/images/004/309/356/full/logo.png?1674492895' alt='a'>
+    <h1>Olá, tudo bem?</h1>
+    <p>$corpoEmail</p>
+    <p>Contamos com a sua presença!</p>
+</body>
 </html>";
 
 $assunto = "Encontro Clube de Cinema";
