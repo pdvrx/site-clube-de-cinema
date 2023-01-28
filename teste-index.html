@@ -37,6 +37,8 @@
                         <p>
                             Em um futuro distópico próximo, uma lei proíbe que as pessoas fiquem solteiras. Qualquer homem ou mulher que não estiver em um relacionamento é preso e enviado ao Hotel, onde terá 45 dias para encontrar um(a) parceiro(a). Caso não encontrem ninguém, eles são transformados em um animal de sua preferência e soltos no meio da Floresta. Neste contexto um homem se apaixona em plena floresta, o que é proibido de acordo com o sistema.
                         </p>
+                        <p id="diretor">Dirigido por:</p>
+
                         <h2>Sala de Artes às 17 hrs</h2>
 
                         <div class="estrelas">
@@ -106,13 +108,15 @@
 
          url = "254320"
 
-        console.log(url)
+        
 
         fetch('https://api.themoviedb.org/3/movie/'+url+'?api_key=7006774efe5e4045670045e98084b7c8')
         .then(resposta=>{
             return resposta.json()
         }).then(corpo=>{
+            console.log(corpo)
             poster=corpo.poster_path
+            diretor= 
             nome=corpo.original_title
             nota=corpo.vote_average
             nota=nota*10
@@ -160,11 +164,23 @@
             document.getElementById("link").src= "https://www.youtube.com/embed/"+link
         })
 
+        fetch('https://api.themoviedb.org/3/movie/'+url+'/credits?api_key=7006774efe5e4045670045e98084b7c8')
+            .then(response =>{
+             return response.json()
+            }).then((jsonData)=>{
+            diretor = jsonData.crew.filter(({job})=> job ==='Director')
+            nomeDiretor=diretor[0].name
+            document.getElementById("diretor").innerHTML="Dirigido por: " + nomeDiretor
+        })
+            
+
         const zap = document.querySelector("#close-modal")
         zap.onclick = function() {
             window.open('cadastrar-zap.html');
 
         }
+
+         
 
     </script>
 

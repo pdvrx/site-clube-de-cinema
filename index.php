@@ -54,6 +54,7 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
                         <p>
                             <?php echo $resultado['descFilme']; ?>
                         </p>
+                        <p id="diretor">Dirigido por:</p>
                         <h2>Sala de Artes às 17 hrs</h2>
 
                         <div class="estrelas">
@@ -184,6 +185,15 @@ $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
             window.open('cadastrar-email.html');
 
         }
+
+        fetch('https://api.themoviedb.org/3/movie/'+url+'/credits?api_key=7006774efe5e4045670045e98084b7c8')
+            .then(response =>{
+             return response.json()
+            }).then((jsonData)=>{
+            diretor = jsonData.crew.filter(({job})=> job ==='Director')
+            nomeDiretor=diretor[0].name
+            document.getElementById("diretor").innerHTML="Dirigido por: " + nomeDiretor
+        })
 
     </script>
 

@@ -193,6 +193,7 @@ main{
     font-size: 14px;
     font-weight: 600;
     color: #9F71E0;
+    transition: 0.5s ease;
 }
 
 .tela-login button:hover{
@@ -219,6 +220,7 @@ button {
     color: #ece9e9;
     text-align: center;
     opacity: 0.8;
+    transition: 0.5s ease;
   }
 
   #button {
@@ -233,6 +235,7 @@ button {
     color: #ece9e9;
     text-align: center;
     opacity: 0.8;
+    transition: 0.5s ease;
   }
 
   #botao{
@@ -247,6 +250,7 @@ button {
     color: #ece9e9;
     text-align: center;
     opacity: 0.8;
+    transition: 0.5s ease;
   }
   
   .open-modal {
@@ -372,11 +376,15 @@ button {
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 250px;
+    height: 280px;
     max-width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
     background-color: #B498DB;
     border-radius: 12px;
+}
+
+#diretor{
+    margin-top: 3vh;
 }
 
 .form2{
@@ -496,13 +504,14 @@ textarea{
     justify-content: center;
     opacity: 0.8;
     background-color: #9F71E0;
+    transition: 0.5s ease;
     
 }
 
 .cards:hover{
     opacity: 1;
     scale: 1.1;
-    transition:cubic-bezier(.33,.69,.92,.6);
+    transition: 0.5s ease;
 }
 
 .cards-collection{
@@ -602,6 +611,7 @@ textarea{
     text-align: center;
     justify-content: center;
     margin-left: 33vw;
+    transition: 0.5s ease;
 }
 
 .menu a:hover{
@@ -682,6 +692,7 @@ textarea{
         color: #ece9e9;
         text-align: center;
         opacity: 0.8;
+        transition: 0.5s ease;
       }
       
 
@@ -719,6 +730,7 @@ textarea{
     .sbrns{
         text-align: center;
         margin-left: 0;
+        margin-top: 420px;
     }
 
     .tela2{
@@ -744,6 +756,7 @@ textarea{
         justify-content: center;
         opacity: 0.8;
         background-color: #9F71E0;
+        transition: 0.5s ease;
         
     }
     
@@ -778,6 +791,11 @@ textarea{
         margin-left: 10vw;
         margin-bottom: 20px;
         margin-top: 0px;
+    }
+
+    #diretor{
+        margin-top: 1vh;
+        margin-bottom: 2vh;
     }
 
 }
